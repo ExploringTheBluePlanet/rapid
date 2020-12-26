@@ -1,5 +1,4 @@
 import React from 'react';
-import './Question.css';
 
 function Question({question, updateAnswer}) {
 

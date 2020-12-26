@@ -84,19 +84,21 @@ function RapidEvaluator() {
     return (
         <div className="RapidEvaluator">
             <Introduction />
-            <table className="table table-bordered">
-                {questions.map((item) => 
-                    <tbody key={item.principle}>
-                        <Principle principle={item.principle}/>
-                        {
-                            item.questions.map((question) =>
-                                <Question key={question.question} question={question} updateAnswer={updateAnswer} />
-                            )
-                        }
-                    </tbody>               
-                )}
-                <TableFooter score={score} />
-            </table>
+            <div className="table-responsive">
+                <table className="table table-bordered">
+                    {questions.map((item) => 
+                        <tbody key={item.principle}>
+                            <Principle principle={item.principle}/>
+                            {
+                                item.questions.map((question) =>
+                                    <Question key={question.question} question={question} updateAnswer={updateAnswer} />
+                                )
+                            }
+                        </tbody>               
+                    )}
+                    <TableFooter score={score} />
+                </table>
+            </div>
             <Results score={score} />
             <div className="my-3">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </div>
